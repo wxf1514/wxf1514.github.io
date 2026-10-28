@@ -1,0 +1,62 @@
+{
+  "updated_at": null,
+  "scholar_id": "Gq2ORzoAAAAJ",
+  "papers": [
+    {
+      "title": "Online magnetorheological damping modulation of a robotic tuna for enhanced speed and efficiency",
+      "authors": "X. Wang , C. Zhou, J. Wang, Z. Yin, P. Shuai, S. Song",
+      "venue": "IEEE/ASME Transactions on Mechatronics · 2026, 1–11",
+      "year": 2026,
+      "type": "journal"
+    },
+    {
+      "title": "Variable Stiffness Caudal Peduncle Enables Higher Propulsion Performance of a Robotic Fish",
+      "authors": "X. Wang , X. Li, L. Yan, S. Song",
+      "venue": "IEEE Robotics and Automation Letters · 2026, 11(8): 9463–9470",
+      "year": 2026,
+      "type": "journal"
+    },
+    {
+      "title": "A fish-like propeller integrated with magnetorheological shear damping and elastic components",
+      "authors": "X. Wang , C. Zhou, J. Wang, J. Fan, B. Zhang, J. Yu, W. Chang",
+      "venue": "IEEE/ASME Transactions on Mechatronics · 2025, 30(6): 5997–6008",
+      "year": 2025,
+      "type": "journal"
+    },
+    {
+      "title": "Toward propulsive performance evaluation of a robotic tuna based on the damping-elastic composite mechanism",
+      "authors": "X. Wang , C. Zhou, J. Wang, J. Fan, Z. Zhang, M. Tan",
+      "venue": "IEEE/ASME Transactions on Mechatronics · 2024, 29(3): 1809–1819",
+      "year": 2024,
+      "type": "journal"
+    },
+    {
+      "title": "CMBUV: A composite-mechanism bioinspired underwater vehicle integrated with elasticity and shear damping possesses high-performance capability",
+      "authors": "X. Wang , C. Zhou, J. Wang, J. Fan, Z. Yin, C. Zhu, L. Deng",
+      "venue": "IEEE Transactions on Intelligent Vehicles · 2024, 9(1): 1628–1640",
+      "year": 2024,
+      "type": "journal"
+    },
+    {
+      "title": "Steering characteristics and path following control of a bionic underwater vehicle with multiple locomotion modes",
+      "authors": "X. Wang , C. Zhou, J. Wang, J. Fan, Z. Zhang, W. Chang",
+      "venue": "Nonlinear Dynamics · 2024, 113(2): 1279–1299",
+      "year": 2024,
+      "type": "journal"
+    },
+    {
+      "title": "The composite mechanism of damping and elasticity for a fish-like flexible propeller",
+      "authors": "X. Wang , C. Zhou, J. Wang",
+      "venue": "Ocean Engineering · 2022, 266: 112642",
+      "year": 2022,
+      "type": "journal"
+    },
+    {
+      "title": "Dynamic modeling of the tuna-inspired robotic fish based on the elastic-damping mechanism",
+      "authors": "X. Wang , L. Deng, C. Zhu, Z. Yin, J. Wang, C. Zhou",
+      "venue": "IEEE International Conference on Mechatronics and Automation (ICMA) · 2022, 1275–1280",
+      "year": 2022,
+      "type": "conference"
+    }
+  ]
+}

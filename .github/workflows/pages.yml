@@ -1,0 +1,38 @@
+name: Publish homepage
+on:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - styles.css
+      - script.js
+      - favicon.svg
+      - data/**
+      - .github/workflows/pages.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare static website
+        run: |
+          mkdir _site
+          cp index.html styles.css script.js favicon.svg .nojekyll _site/
+          cp -r data _site/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Deploy homepage
+        id: deployment
+        uses: actions/deploy-pages@v4

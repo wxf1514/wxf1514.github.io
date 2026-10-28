@@ -1,0 +1,57 @@
+name: Update Google Scholar
+on:
+  schedule:
+    - cron: '23 22 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [.github/workflows/scholar.yml]
+permissions:
+  contents: write
+concurrency:
+  group: scholar-sync
+  cancel-in-progress: false
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests==2.32.3 beautifulsoup4==4.12.3
+      - run: python scripts/sync_scholar.py
+      - name: Save successful snapshot
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/publications.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update Google Scholar publications'
+            git push
+          fi
+      - name: Prepare website
+        run: |
+          mkdir _site
+          cp index.html styles.css script.js favicon.svg .nojekyll _site/
+          cp -r data _site/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+  deploy:
+    needs: sync
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy updated papers
+        id: deployment
+        uses: actions/deploy-pages@v4
